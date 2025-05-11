@@ -1,44 +1,23 @@
 package com.naboo.primera_fase.entity;
 
-import java.util.Date;
-
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import java.util.List;
 
 @Entity
-@Table(name = "orders")
-@Data
-@Getter
-@Setter
+@Table(name = "naboo_order")
 public class Order {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    private User hostelero;
+    private int userId; // Asociar el pedido al ID del usuario
 
-    @ManyToOne
-    private Product product;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<CartItem> items; // Ítems del pedido
 
-    private Integer quantity;
+    private Double totalAmount; // Monto total del pedido
 
-    public enum OrderStatus {
-        PENDING,
-        COMPLETED,
-        CANCELLED
-    }
-
-    @Enumerated(EnumType.STRING)
-    private OrderStatus status;
-
-    private Date fecha_pedido;
-
-    private Date fecha_entrega;
-
-
+    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -47,51 +26,27 @@ public class Order {
         this.id = id;
     }
 
-    public User getHostelero() {
-        return hostelero;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setHostelero(User hostelero) {
-        this.hostelero = hostelero;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public Product getProduct() {
-        return product;
+    public List<CartItem> getItems() {
+        return items;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setItems(List<CartItem> items) {
+        this.items = items;
     }
 
-    public Integer getQuantity() {
-        return quantity;
+    public Double getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public OrderStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(OrderStatus status) {
-        this.status = status;
-    }
-
-    public Date getFecha_pedido() {
-        return fecha_pedido;
-    }
-
-    public void setFecha_pedido(Date fecha_pedido) {
-        this.fecha_pedido = fecha_pedido;
-    }
-
-    public Date getFecha_entrega() {
-        return fecha_entrega;
-    }
-
-    public void setFecha_entrega(Date fecha_entrega) {
-        this.fecha_entrega = fecha_entrega;
+    public void setTotalAmount(Double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }

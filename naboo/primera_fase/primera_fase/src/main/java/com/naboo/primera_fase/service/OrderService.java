@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 public interface OrderService {
 
     public List<Order> getAllOrders();
+    public Order getOrderById(int id);
     public Order saveOrder(Order order);
     public Order updateOrder(Integer id, Order newOrder);
     public void deleteOrder(Integer id);
+    public Order createOrder(int userId);
 
 }

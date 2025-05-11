@@ -1,6 +1,7 @@
 package com.naboo.primera_fase.controllers;
 
 import com.naboo.primera_fase.entity.Order;
+import com.naboo.primera_fase.service.CartService;
 import com.naboo.primera_fase.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,9 @@ public class OrderController {
     
     @Autowired
     OrderService orderService;
+
+    @Autowired
+    CartService cartService;
 
     @GetMapping
     public List<Order> listOrders() {
@@ -42,11 +46,17 @@ public class OrderController {
         return orderService.updateOrder(id, newOrder);
     }
 
-    // @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     public List<Order> deleteOrder(@PathVariable int id) {
         orderService.deleteOrder(id);
         return orderService.getAllOrders();
     }
+
+    @PostMapping("/create")
+    public Order createOrder(@RequestParam int userId) {
+        return orderService.createOrder(userId);
+    }
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.naboo.primera_fase.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,8 @@ public class User {
     private String nif; // Número de identificación fiscal (si aplica)
     private String phoneNumber; // Número de teléfono del usuario
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @JoinColumn(name = "usuario_id")
+    @JsonManagedReference
     private Cart cart;
 
 

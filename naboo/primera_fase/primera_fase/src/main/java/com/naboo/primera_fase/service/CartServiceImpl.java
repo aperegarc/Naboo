@@ -22,7 +22,7 @@ public class CartServiceImpl implements CartService{
     private UserRepository userRepository;
 
     public Cart getCartByUserId(int userId) {
-        return cartRepository.findByUser_Id(userId);
+        return cartRepository.findByUserId(userId);
     }
 
     public Cart addItemToCart(int userId, int productId, int quantity) {
@@ -31,7 +31,7 @@ public class CartServiceImpl implements CartService{
             throw new RuntimeException("El usuario no es un hostelero o no existe.");
         }
 
-        Cart cart = cartRepository.findByUser_Id(userId);
+        Cart cart = cartRepository.findByUserId(userId);
         if (cart == null) {
             cart = new Cart();
             cart.setUser(user.get());

@@ -1,5 +1,7 @@
 package com.naboo.primera_fase.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,6 +16,7 @@ public class Cart {
     private Long id;
 
     @OneToOne
+    @JsonBackReference
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL)
