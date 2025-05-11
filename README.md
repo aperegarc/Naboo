@@ -6,7 +6,6 @@
 ## **Descripción**
 Naboo es una plataforma innovadora que conecta a proveedores con hosteleros de una manera eficiente y práctica. Inspirada en el modelo de Amazon, Naboo permite que los proveedores suban sus ofertas de productos y servicios, mientras que los hosteleros pueden explorar, comparar y realizar compras directamente desde la plataforma.
 
-Con Naboo, simplificamos la gestión de compras en el sector hostelero, asegurando una experiencia ágil, confiable y transparente para todos los usuarios.
 
 ---
 
@@ -22,18 +21,16 @@ Con Naboo, simplificamos la gestión de compras en el sector hostelero, aseguran
 
 ## **Tecnologías Utilizadas**
 - **Backend:** Spring Boot (Java)
-- **Frontend:** React.js (o cualquier otra tecnología que estés usando para la interfaz).
-- **Base de Datos:** MySQL / PostgreSQL.
-- **Integración Continua:** GitHub Actions.
-- **Cloud:** AWS / Azure / Google Cloud para despliegue y almacenamiento.
+- **Frontend:** React.js (aún no implementada).
+- **Base de Datos:** PostgreSQL.
+- **Cloud:** Aún no implementado
 
 ---
 
 ## **Requisitos Previos**
 1. **Java 11 o superior**.
 2. **Maven 3.6+**.
-3. **Node.js 16+** (si el frontend está en React).
-4. **MySQL o PostgreSQL** configurado para la base de datos.
+4. **PostgreSQL** configurado para la base de datos.
 5. **Git** para clonar el repositorio.
 
 ---
