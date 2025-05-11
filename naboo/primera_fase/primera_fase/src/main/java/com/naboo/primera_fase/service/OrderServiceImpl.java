@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.naboo.primera_fase.entity.Order;
 import com.naboo.primera_fase.repository.OrderRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class OrderServiceImpl implements OrderService{
 
     @Autowired

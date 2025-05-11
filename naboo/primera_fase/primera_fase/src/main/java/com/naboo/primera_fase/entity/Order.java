@@ -39,5 +39,59 @@ public class Order {
     private Date fecha_entrega;
 
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getHostelero() {
+        return hostelero;
+    }
+
+    public void setHostelero(User hostelero) {
+        this.hostelero = hostelero;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
+    public Date getFecha_pedido() {
+        return fecha_pedido;
+    }
+
+    public void setFecha_pedido(Date fecha_pedido) {
+        this.fecha_pedido = fecha_pedido;
+    }
+
+    public Date getFecha_entrega() {
+        return fecha_entrega;
+    }
+
+    public void setFecha_entrega(Date fecha_entrega) {
+        this.fecha_entrega = fecha_entrega;
+    }
 }

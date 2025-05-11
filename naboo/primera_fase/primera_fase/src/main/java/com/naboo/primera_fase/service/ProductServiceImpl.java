@@ -4,9 +4,13 @@ import java.util.List;
 
 import com.naboo.primera_fase.entity.Product;
 import com.naboo.primera_fase.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProductServiceImpl implements ProductService{
 
+    @Autowired
     ProductRepository productRepository;
 
     @Override
