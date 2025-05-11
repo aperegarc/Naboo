@@ -23,7 +23,7 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public Order updatOrder(Integer id, Order newOrder) {
+    public Order updateOrder(Integer id, Order newOrder) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'updatOrder'");
     }

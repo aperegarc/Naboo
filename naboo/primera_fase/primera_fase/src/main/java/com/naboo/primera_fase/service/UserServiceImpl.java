@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService{
         if(nuevoUser.getName() != null || nuevoUser.getName() != ""){
             user.setName(nuevoUser.getName());
         }
-        if(nuevoUser.getRole() != null || nuevoUser.getRole() != ""){
+        if(nuevoUser.getRole() != null || nuevoUser.getRole().equals(null)){
             user.setRole(nuevoUser.getRole());
         }
         return userRepository.save(user);
