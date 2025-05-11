@@ -19,9 +19,11 @@ public class User {
     private UserRole role; // Rol del usuario (ADMIN, HOSTELERO, PROVEEDOR)
     private String nif; // Número de identificación fiscal (si aplica)
     private String phoneNumber; // Número de teléfono del usuario
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Cart cart;
+
 
     public int getId() {
-
         return id;
     }
 
@@ -35,13 +37,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    
-
-    @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", name='" + name + '\'' + ", role='" + role + '\'' + '}';
     }
 
     public String getEmail() {
@@ -74,5 +69,13 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }

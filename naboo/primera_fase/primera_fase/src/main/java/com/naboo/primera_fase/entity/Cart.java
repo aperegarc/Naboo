@@ -1,9 +1,13 @@
 package com.naboo.primera_fase.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Data
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +18,16 @@ public class Cart {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<CartItem> items;
+
+    public Cart(Long id, User user, List<CartItem> items) {
+        this.id = id;
+        this.user = user;
+        this.items = new ArrayList<>();
+    }
+
+    public Cart() {
+        this.items = new ArrayList<>();
+    }
 
     // Getters and Setters
 
@@ -38,6 +52,15 @@ public class Cart {
     }
 
     public void setItems(List<CartItem> items) {
-        this.items = items;
+        if (items == null) {
+            this.items = new ArrayList<>();
+        } else {
+            this.items = items;
+        }
     }
+
+    public void addItem(CartItem item){
+        this.getItems().add(item);
+    }
+
 }
